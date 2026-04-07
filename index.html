@@ -6,7 +6,7 @@
 <title>Radnere Page</title>
 <meta name="description" content="Oleksandr Niskov (Radnere) — Technical generalist at the intersection of AI, project coordination, and operations. Open to remote opportunities.">
 <!-- FAVICON: Upload 1722_Vector.svg to your GitHub repo, then uncomment: -->
-<link rel="icon" type="image/svg+xml" href="files/1722_Vector.svg">
+<link rel="icon" type="image/png" href="files/1722_Vector.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -161,7 +161,6 @@ nav.scrolled{background:rgba(8,8,12,.88);backdrop-filter:blur(24px);-webkit-back
 .carousel-card:nth-child(1){grid-column:1;grid-row:1/3}
 .carousel-card:nth-child(2){grid-column:2;grid-row:1}
 .carousel-card:nth-child(3){grid-column:2;grid-row:2}
-.carousel-label{position:absolute;top:10px;left:10px;font-family:var(--fm);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t1);background:rgba(8,8,12,.75);backdrop-filter:blur(8px);padding:3px 10px;border-radius:100px;z-index:4}
 .carousel-track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1);height:100%}
 .carousel-slide{min-width:100%;height:100%;position:relative}
 .carousel-slide img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
@@ -178,8 +177,16 @@ nav.scrolled{background:rgba(8,8,12,.88);backdrop-filter:blur(24px);-webkit-back
 footer{padding:36px 0;text-align:center;border-top:1px solid var(--border)}
 footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 .sdiv{width:50px;height:1px;background:linear-gradient(90deg,var(--accent),var(--cyan));margin:0 auto;opacity:.4}
-@media(max-width:900px){.hero-c{grid-template-columns:1fr;gap:36px}.hero-ph{order:-1;max-width:280px;margin:0 auto}.about-g,.pers-g{grid-template-columns:1fr}.nav-links{display:none}.menu-tog{display:block}.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(8,8,12,.97);backdrop-filter:blur(24px);align-items:center;justify-content:center;gap:24px;z-index:999}.nav-links.open a{font-size:18px;color:var(--t1)}}
-@media(max-width:600px){.hero-cta{flex-direction:column}.hero-cta .btn-p,.hero-cta .btn-s{width:100%;justify-content:center}.focus-g,.edu-g,.build-g{grid-template-columns:1fr}.about-hi{grid-template-columns:1fr}.ct-links{flex-direction:column;align-items:center}.ct-link{width:100%;justify-content:center}.pers-photos{grid-template-columns:1fr}.carousel-card:first-child{grid-row:auto}}
+/* Mobile avatar circle */
+.hero-mobile-avatar{display:none}
+@media(max-width:900px){.hero-c{grid-template-columns:1fr;gap:20px}.hero-ph{display:none}.hero-mobile-avatar{display:block;width:120px;height:120px;border-radius:50%;overflow:hidden;border:2px solid var(--accent);margin-bottom:20px;flex-shrink:0}.hero-mobile-avatar img{width:100%;height:100%;object-fit:cover}.about-g,.pers-g{grid-template-columns:1fr}.nav-links{display:none}.menu-tog{display:block}.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(8,8,12,.97);backdrop-filter:blur(24px);align-items:center;justify-content:center;gap:24px;z-index:999}.nav-links.open a{font-size:18px;color:var(--t1)}}
+@media(max-width:600px){.hero-cta{flex-direction:column}.hero-cta .btn-p,.hero-cta .btn-s{width:100%;justify-content:center}.focus-g,.edu-g,.build-g{grid-template-columns:1fr}.about-hi{grid-template-columns:1fr}.ct-links{flex-direction:column;align-items:center}.ct-link{width:100%;justify-content:center}
+/* Mobile: merge all carousels into one single row */
+.pers-photos{grid-template-columns:1fr;grid-template-rows:300px}
+.carousel-card:nth-child(1){grid-column:auto;grid-row:auto}
+.carousel-card:nth-child(2),.carousel-card:nth-child(3){display:none}
+.carousel-card-mobile{display:block!important}
+}
 </style>
 </head>
 <body>
@@ -188,7 +195,7 @@ footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 <nav id="navbar"><div class="nav-i"><a href="#hero" class="nav-logo"><span>R</span>adnere</a><ul class="nav-links" id="navLinks"><li><a href="#about" onclick="closeMenu()">About</a></li><li><a href="#experience" onclick="closeMenu()">Experience</a></li><li><a href="#focus" onclick="closeMenu()">Focus</a></li><li><a href="#stack" onclick="closeMenu()">Stack</a></li><li><a href="#edu" onclick="closeMenu()">Education</a></li><li><a href="#building" onclick="closeMenu()">Building</a></li><li><a href="#personal" onclick="closeMenu()">Personal</a></li></ul><a href="#contact" class="nav-cta">Get in touch</a><button class="menu-tog" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
 
 <!-- HERO -->
-<section id="hero"><div class="hero-grid-bg"></div><div class="hero-orb orb1"></div><div class="hero-orb orb2"></div><div class="hero-orb orb3"></div><div class="ctn"><div class="hero-c"><div class="hero-text"><div class="hero-status rv"><span class="pulse-dot"></span>Open to opportunities · Remote / EU timezone</div><h1 class="hero-name rv d1">Oleksandr<br><em>Niskov</em></h1><p class="hero-tag rv d2">Where AI curiosity meets structured execution.</p><div class="hero-rot rv d3"><div class="hero-rot-in"><span class="hero-rot-w">→ AI & LLM Workflows</span><span class="hero-rot-w">→ Project Coordination</span><span class="hero-rot-w">→ Operations & Systems</span><span class="hero-rot-w">→ Technical Support</span><span class="hero-rot-w">→ Process Architecture</span><span class="hero-rot-w">→ XR & Emerging Tech</span><span class="hero-rot-w">→ AI & LLM Workflows</span></div></div><p class="hero-desc rv d3">Technical generalist with an MSc in IT Project Management and a BSc in CS / AI. I connect people, processes, and technology — making complex systems clear, structured, and operational.</p><div class="hero-cta rv d4"><a href="#contact" class="btn-p"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact Me</a><a href="https://www.linkedin.com/in/oleksandr-niskov-3b7401255/" target="_blank" class="btn-s">LinkedIn</a><!-- CV: upload your CV.pdf to GitHub repo and update href --><a href="files/CV.pdf" target="_blank" class="btn-s">Download CV</a></div></div><div class="hero-ph rv d2"><div class="hero-ph-frame">
+<section id="hero"><div class="hero-grid-bg"></div><div class="hero-orb orb1"></div><div class="hero-orb orb2"></div><div class="hero-orb orb3"></div><div class="ctn"><div class="hero-c"><div class="hero-text"><div class="hero-mobile-avatar rv"><img src="files/portrait.png" alt="Oleksandr Niskov"></div><div class="hero-status rv"><span class="pulse-dot"></span>Open to opportunities · Remote / EU timezone</div><h1 class="hero-name rv d1">Oleksandr<br><em>Niskov</em></h1><p class="hero-tag rv d2">Where AI curiosity meets structured execution.</p><div class="hero-rot rv d3"><div class="hero-rot-in"><span class="hero-rot-w">→ AI & LLM Workflows</span><span class="hero-rot-w">→ Project Coordination</span><span class="hero-rot-w">→ Operations & Systems</span><span class="hero-rot-w">→ Technical Support</span><span class="hero-rot-w">→ Process Architecture</span><span class="hero-rot-w">→ XR & Emerging Tech</span><span class="hero-rot-w">→ AI & LLM Workflows</span></div></div><p class="hero-desc rv d3">Technical generalist with an MSc in IT Project Management and a BSc in CS / AI. I connect people, processes, and technology — making complex systems clear, structured, and operational.</p><div class="hero-cta rv d4"><a href="#contact" class="btn-p"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact Me</a><a href="https://www.linkedin.com/in/oleksandr-niskov-3b7401255/" target="_blank" class="btn-s">LinkedIn</a><!-- CV: upload your CV.pdf to GitHub repo and update href --><a href="files/CV.pdf" target="_blank" class="btn-s">Download CV</a></div></div><div class="hero-ph rv d2"><div class="hero-ph-frame">
 <img src="files/portrait.png" alt="Oleksandr Niskov" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:3">
 </div><div class="hero-ph-acc"></div><div class="hero-ph-acc2"></div></div></div></div></section>
 
@@ -253,7 +260,6 @@ footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 
 <!-- CAROUSEL 1 (tall left): Hobbies -->
 <div class="carousel-card" data-carousel>
-<div class="carousel-label">Hobbies</div>
 <div style="overflow:hidden;height:100%"><div class="carousel-track">
 <div class="carousel-slide"><img src="files/hobby2.jpg" alt="Hobby"></div>
 <div class="carousel-slide"><img src="files/hobby3.jpg" alt="Hobby"></div>
@@ -265,7 +271,6 @@ footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 
 <!-- CAROUSEL 2 (top right): Travel -->
 <div class="carousel-card" data-carousel>
-<div class="carousel-label">Travel</div>
 <div style="overflow:hidden;height:100%"><div class="carousel-track">
 <div class="carousel-slide"><img src="files/travel1.jpg" alt="Travel"></div>
 <div class="carousel-slide"><img src="files/travel2.jpg" alt="Travel"></div>
@@ -284,7 +289,6 @@ footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 
 <!-- CAROUSEL 3 (bottom right): Achievements -->
 <div class="carousel-card" data-carousel>
-<div class="carousel-label">Achievements</div>
 <div style="overflow:hidden;height:100%"><div class="carousel-track">
 <div class="carousel-slide"><img src="files/achieve2.jpg" alt="Achievement"></div>
 <div class="carousel-slide"><img src="files/achieve3.JPG" alt="Achievement"></div>
@@ -294,6 +298,27 @@ footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span></div>
 </div>
 
+</div>
+
+<!-- MOBILE ONLY: single merged carousel with all photos -->
+<div class="carousel-card carousel-card-mobile" data-carousel style="display:none;margin-top:20px;border-radius:var(--rs);background:var(--card);border:1px solid var(--border);overflow:hidden;position:relative;height:320px">
+<div style="overflow:hidden;height:100%"><div class="carousel-track">
+<div class="carousel-slide"><img src="files/hobby2.jpg" alt=""></div>
+<div class="carousel-slide"><img src="files/hobby3.jpg" alt=""></div>
+<div class="carousel-slide"><img src="files/hobby4.JPG" alt=""></div>
+<div class="carousel-slide"><img src="files/hobby5.jpg" alt=""></div>
+<div class="carousel-slide"><img src="files/travel1.jpg" alt=""></div>
+<div class="carousel-slide"><img src="files/travel2.jpg" alt=""></div>
+<div class="carousel-slide"><img src="files/travel3.jpg" alt=""></div>
+<div class="carousel-slide"><img src="files/travel4.jpg" alt=""></div>
+<div class="carousel-slide"><img src="files/travel5.jpg" alt=""></div>
+<div class="carousel-slide"><img src="files/travel6.jpg" alt=""></div>
+<div class="carousel-slide"><img src="files/achieve2.jpg" alt=""></div>
+<div class="carousel-slide"><img src="files/achieve3.JPG" alt=""></div>
+<div class="carousel-slide"><img src="files/achieve4.jpg" alt=""></div>
+<div class="carousel-slide"><img src="files/achieve5.jpg" alt=""></div>
+</div></div>
+<div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span></div>
 </div>
 </div></div></section>
 
