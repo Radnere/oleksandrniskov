@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radnere Page</title>
 <meta name="description" content="Oleksandr Niskov (Radnere) — Technical generalist at the intersection of AI, project coordination, and operations. Open to remote opportunities.">
-<!-- FAVICON: Upload 1722_Vector.svg to your GitHub repo, then uncomment: -->
-<link rel="icon" type="image/png" href="files/1722_Vector.svg">
+<link rel="icon" type="image/png" href="files/1722.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -177,15 +176,26 @@ nav.scrolled{background:rgba(8,8,12,.88);backdrop-filter:blur(24px);-webkit-back
 footer{padding:36px 0;text-align:center;border-top:1px solid var(--border)}
 footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 .sdiv{width:50px;height:1px;background:linear-gradient(90deg,var(--accent),var(--cyan));margin:0 auto;opacity:.4}
-/* Mobile avatar circle */
+/* Mobile avatar + name row */
+.hero-mobile-header{display:none}
 .hero-mobile-avatar{display:none}
-@media(max-width:900px){.hero-c{grid-template-columns:1fr;gap:20px}.hero-ph{display:none}.hero-mobile-avatar{display:block;width:120px;height:120px;border-radius:50%;overflow:hidden;border:2px solid var(--accent);margin-bottom:20px;flex-shrink:0}.hero-mobile-avatar img{width:100%;height:100%;object-fit:cover}.about-g,.pers-g{grid-template-columns:1fr}.nav-links{display:none}.menu-tog{display:block}.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(8,8,12,.97);backdrop-filter:blur(24px);align-items:center;justify-content:center;gap:24px;z-index:999}.nav-links.open a{font-size:18px;color:var(--t1)}}
-@media(max-width:600px){.hero-cta{flex-direction:column}.hero-cta .btn-p,.hero-cta .btn-s{width:100%;justify-content:center}.focus-g,.edu-g,.build-g{grid-template-columns:1fr}.about-hi{grid-template-columns:1fr}.ct-links{flex-direction:column;align-items:center}.ct-link{width:100%;justify-content:center}
-/* Mobile: merge all carousels into one single row */
-.pers-photos{grid-template-columns:1fr;grid-template-rows:300px}
-.carousel-card:nth-child(1){grid-column:auto;grid-row:auto}
-.carousel-card:nth-child(2),.carousel-card:nth-child(3){display:none}
-.carousel-card-mobile{display:block!important}
+@media(max-width:900px){
+.hero-c{grid-template-columns:1fr;gap:20px}
+.hero-ph{display:none}
+.hero-mobile-header{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.hero-mobile-header .mob-avatar{width:90px;height:90px;border-radius:50%;overflow:hidden;border:2px solid var(--accent);flex-shrink:0}
+.hero-mobile-header .mob-avatar img{width:100%;height:100%;object-fit:cover}
+.hero-mobile-header .mob-name{font-family:var(--fd);font-size:32px;line-height:1.1;color:var(--t1)}
+.hero-mobile-header .mob-name em{color:var(--accent);font-style:italic}
+.hero-name{display:none}
+.hero-tag{margin-top:4px}
+.about-g,.pers-g{grid-template-columns:1fr}
+.nav-links{display:none}
+.menu-tog{display:block}
+.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(8,8,12,.98);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);align-items:center;justify-content:center;gap:28px;z-index:999}
+.nav-links.open a{font-size:20px;color:var(--t1);font-weight:500}
+.pers-photos{display:none}
+.carousel-card-mobile{display:block!important;height:320px;border-radius:var(--rs);background:var(--card);border:1px solid var(--border);overflow:hidden;position:relative}
 }
 </style>
 </head>
@@ -195,12 +205,18 @@ footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 <nav id="navbar"><div class="nav-i"><a href="#hero" class="nav-logo"><span>R</span>adnere</a><ul class="nav-links" id="navLinks"><li><a href="#about" onclick="closeMenu()">About</a></li><li><a href="#experience" onclick="closeMenu()">Experience</a></li><li><a href="#focus" onclick="closeMenu()">Focus</a></li><li><a href="#stack" onclick="closeMenu()">Stack</a></li><li><a href="#edu" onclick="closeMenu()">Education</a></li><li><a href="#building" onclick="closeMenu()">Building</a></li><li><a href="#personal" onclick="closeMenu()">Personal</a></li></ul><a href="#contact" class="nav-cta">Get in touch</a><button class="menu-tog" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
 
 <!-- HERO -->
-<section id="hero"><div class="hero-grid-bg"></div><div class="hero-orb orb1"></div><div class="hero-orb orb2"></div><div class="hero-orb orb3"></div><div class="ctn"><div class="hero-c"><div class="hero-text"><div class="hero-mobile-avatar rv"><img src="files/portrait.png" alt="Oleksandr Niskov"></div><div class="hero-status rv"><span class="pulse-dot"></span>Open to opportunities · Remote / EU timezone</div><h1 class="hero-name rv d1">Oleksandr<br><em>Niskov</em></h1><p class="hero-tag rv d2">Where AI curiosity meets structured execution.</p><div class="hero-rot rv d3"><div class="hero-rot-in"><span class="hero-rot-w">→ AI & LLM Workflows</span><span class="hero-rot-w">→ Project Coordination</span><span class="hero-rot-w">→ Operations & Systems</span><span class="hero-rot-w">→ Technical Support</span><span class="hero-rot-w">→ Process Architecture</span><span class="hero-rot-w">→ XR & Emerging Tech</span><span class="hero-rot-w">→ AI & LLM Workflows</span></div></div><p class="hero-desc rv d3">Technical generalist with an MSc in IT Project Management and a BSc in CS / AI. I connect people, processes, and technology — making complex systems clear, structured, and operational.</p><div class="hero-cta rv d4"><a href="#contact" class="btn-p"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact Me</a><a href="https://www.linkedin.com/in/oleksandr-niskov-3b7401255/" target="_blank" class="btn-s">LinkedIn</a><!-- CV: upload your CV.pdf to GitHub repo and update href --><a href="files/CV.pdf" target="_blank" class="btn-s">Download CV</a></div></div><div class="hero-ph rv d2"><div class="hero-ph-frame">
+<section id="hero"><div class="hero-grid-bg"></div><div class="hero-orb orb1"></div><div class="hero-orb orb2"></div><div class="hero-orb orb3"></div><div class="ctn"><div class="hero-c"><div class="hero-text">
+<!-- Mobile: avatar + name side by side -->
+<div class="hero-mobile-header rv">
+<div class="mob-avatar"><img src="files/portrait.png" alt="Oleksandr Niskov"></div>
+<div class="mob-name">Oleksandr<br><em>Niskov</em></div>
+</div>
+<div class="hero-status rv"><span class="pulse-dot"></span>Open to opportunities · Remote / EU timezone</div><h1 class="hero-name rv d1">Oleksandr<br><em>Niskov</em></h1><p class="hero-tag rv d2">Where AI curiosity meets structured execution.</p><div class="hero-rot rv d3"><div class="hero-rot-in"><span class="hero-rot-w">→ AI & LLM Workflows</span><span class="hero-rot-w">→ Project Coordination</span><span class="hero-rot-w">→ Operations & Systems</span><span class="hero-rot-w">→ Technical Support</span><span class="hero-rot-w">→ Process Architecture</span><span class="hero-rot-w">→ XR & Emerging Tech</span><span class="hero-rot-w">→ AI & LLM Workflows</span></div></div><p class="hero-desc rv d3">Technical generalist with an MSc in IT Project Management and a BSc in CS / AI. I connect people, processes, and technology — making complex systems clear, structured, and operational.</p><div class="hero-cta rv d4"><a href="#contact" class="btn-p"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact Me</a><a href="https://www.linkedin.com/in/oleksandr-niskov-3b7401255/" target="_blank" class="btn-s">LinkedIn</a><!-- CV: upload your CV.pdf to GitHub repo and update href --><a href="files/CV.pdf" target="_blank" class="btn-s">Download CV</a></div></div><div class="hero-ph rv d2"><div class="hero-ph-frame">
 <img src="files/portrait.png" alt="Oleksandr Niskov" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:3">
 </div><div class="hero-ph-acc"></div><div class="hero-ph-acc2"></div></div></div></div></section>
 
 <!-- ABOUT -->
-<section id="about"><div class="ctn"><div class="about-g"><div class="about-text"><div class="slabel rv">About</div><h2 class="stitle rv d1">Not a narrow specialist.<br>A <em>connector.</em></h2><p class="rv d2">I operate at the intersection of <strong>AI understanding</strong>, <strong>project coordination</strong>, and <strong>operations discipline</strong>. My academic path — from Computer Science and Artificial Intelligence to IT Project Management — gave me the rare ability to speak both the language of technology and the language of execution.</p><p class="rv d3">In a cross-functional XR startup team of ~15 people, I learned what it takes to keep projects moving: clear documentation, structured follow-ups, stakeholder materials, handovers that actually work. In retail operations, I built audit workflows across 3 stores and helped prepare a contactless payments rollout.</p><p class="rv d3">Today, I bring that same structured mindset to <strong>AI-native workflows</strong> — building with LLMs, designing PM toolkits, simulating ITSM processes, and constantly exploring how technology can make work clearer and faster.</p><div class="about-hi rv d4"><div class="hi-card"><div class="hi-num">~15</div><div class="hi-label">People coordinated in XR team</div></div><div class="hi-card"><div class="hi-num">4</div><div class="hi-label">Languages: UA · RU · EN · ES</div></div><div class="hi-card"><div class="hi-num">2°</div><div class="hi-label">MSc + BSc: IT PM & CS/AI</div></div><div class="hi-card"><div class="hi-num">EU+CA</div><div class="hi-label">Work permits: Spain & Canada</div></div></div></div><div class="rv d2" style="display:flex;flex-direction:column;gap:18px"><div class="about-ph">
+<section id="about"><div class="ctn"><div class="about-g"><div class="about-text"><div class="slabel rv">About</div><h2 class="stitle rv d1">Not a narrow specialist.<br>A <em>connector.</em></h2><p class="rv d2">I operate at the intersection of <strong>AI understanding</strong>, <strong>project coordination</strong>, and <strong>operations discipline</strong>. My academic path — from Computer Science and Artificial Intelligence to IT Project Management — gave me the rare ability to speak both the language of technology and the language of execution.</p><p class="rv d3">In a cross-functional XR startup team of ~15 people, I learned what it takes to keep projects moving: clear documentation, structured follow-ups, stakeholder materials, handovers that actually work. In retail operations, I built audit workflows across 3 stores and helped prepare a contactless payments rollout.</p><p class="rv d3">Today, I bring that same structured mindset to <strong>AI-native workflows</strong> — building with LLMs, designing PM toolkits, simulating ITSM processes, and constantly exploring how technology can make work clearer and faster.</p><div class="about-hi rv d4"><div class="hi-card"><div class="hi-num">~15</div><div class="hi-label">People coordinated in XR team</div></div><div class="hi-card"><div class="hi-num">4</div><div class="hi-label">Languages: UA · RU · EN · ES</div></div><div class="hi-card"><div class="hi-num">2</div><div class="hi-label">MSc + BSc: IT PM & CS/AI</div></div><div class="hi-card"><div class="hi-num">EU+CA</div><div class="hi-label">Work permits: Spain & Canada</div></div></div></div><div class="rv d2" style="display:flex;flex-direction:column;gap:18px"><div class="about-ph">
 <img src="files/lifestyle.jpg" alt="Oleksandr Niskov">
 </div></div></div></div></section>
 
