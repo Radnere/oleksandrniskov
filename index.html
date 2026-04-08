@@ -180,6 +180,7 @@ footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 /* Mobile avatar + name row */
 .hero-mobile-header{display:none}
 .hero-mobile-avatar{display:none}
+.carousel-card-mobile{display:none}
 @media(max-width:900px){
 .hero-c{grid-template-columns:1fr;gap:20px}
 .hero-ph{display:none}
@@ -193,10 +194,10 @@ footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 .about-g,.pers-g{grid-template-columns:1fr}
 .nav-links{display:none}
 .menu-tog{display:block}
-.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(8,8,12,.98);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);align-items:center;justify-content:center;gap:28px;z-index:999}
+.nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:#08080c;align-items:center;justify-content:center;gap:28px;z-index:999}
 .nav-links.open a{font-size:20px;color:var(--t1);font-weight:500}
 .pers-photos{display:none}
-.carousel-card-mobile{display:block!important;height:320px;border-radius:var(--rs);background:var(--card);border:1px solid var(--border);overflow:hidden;position:relative}
+.carousel-card-mobile{display:block!important;height:320px;border-radius:var(--rs);background:var(--card);border:1px solid var(--border);overflow:hidden;position:relative;margin-top:20px}
 }
 </style>
 </head>
@@ -217,7 +218,7 @@ footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 </div><div class="hero-ph-acc"></div><div class="hero-ph-acc2"></div></div></div></div></section>
 
 <!-- ABOUT -->
-<section id="about"><div class="ctn"><div class="about-g"><div class="about-text"><div class="slabel rv">About</div><h2 class="stitle rv d1">Not a narrow specialist.<br>A <em>connector.</em></h2><p class="rv d2">I operate at the intersection of <strong>AI understanding</strong>, <strong>project coordination</strong>, and <strong>operations discipline</strong>. My academic path — from Computer Science and Artificial Intelligence to IT Project Management — gave me the rare ability to speak both the language of technology and the language of execution.</p><p class="rv d3">In a cross-functional XR startup team of ~15 people, I learned what it takes to keep projects moving: clear documentation, structured follow-ups, stakeholder materials, handovers that actually work. In retail operations, I built audit workflows across 3 stores and helped prepare a contactless payments rollout.</p><p class="rv d3">Today, I bring that same structured mindset to <strong>AI-native workflows</strong> — building with LLMs, designing PM toolkits, simulating ITSM processes, and constantly exploring how technology can make work clearer and faster.</p><div class="about-hi rv d4"><div class="hi-card"><div class="hi-num">~15</div><div class="hi-label">People coordinated in XR team</div></div><div class="hi-card"><div class="hi-num">4</div><div class="hi-label">Languages: UA · RU · EN · ES</div></div><div class="hi-card"><div class="hi-num">2</div><div class="hi-label">MSc + BSc: IT PM & CS/AI</div></div><div class="hi-card"><div class="hi-num">EU+CA</div><div class="hi-label">Work permits: Spain & Canada</div></div></div></div><div class="rv d2" style="display:flex;flex-direction:column;gap:18px"><div class="about-ph">
+<section id="about"><div class="ctn"><div class="about-g"><div class="about-text"><div class="slabel rv">About</div><h2 class="stitle rv d1">Not a narrow specialist.<br>A <em>connector.</em></h2><p class="rv d2">I operate at the intersection of <strong>AI understanding</strong>, <strong>project coordination</strong>, and <strong>operations discipline</strong>. My academic path — from Computer Science and Artificial Intelligence to IT Project Management — gave me the rare ability to speak both the language of technology and the language of execution.</p><p class="rv d3">In a cross-functional XR startup team of ~15 people, I learned what it takes to keep projects moving: clear documentation, structured follow-ups, stakeholder materials, handovers that actually work. In retail operations, I built audit workflows across 3 stores and helped prepare a contactless payments rollout.</p><p class="rv d3">Today, I bring that same structured mindset to <strong>AI-native workflows</strong> — building with LLMs, designing PM toolkits, simulating ITSM processes, and constantly exploring how technology can make work clearer and faster.</p><div class="about-hi rv d4"><div class="hi-card"><div class="hi-num">~15</div><div class="hi-label">People coordinated in XR team</div></div><div class="hi-card"><div class="hi-num">4</div><div class="hi-label">Languages: UA · RU · EN · ES</div></div><div class="hi-card"><div class="hi-num">2°</div><div class="hi-label">MSc + BSc: IT PM & CS/AI</div></div><div class="hi-card"><div class="hi-num">EU+CA</div><div class="hi-label">Work permits: Spain & Canada</div></div></div></div><div class="rv d2" style="display:flex;flex-direction:column;gap:18px"><div class="about-ph">
 <img src="files/lifestyle.jpg" alt="Oleksandr Niskov">
 </div></div></div></div></section>
 
@@ -318,7 +319,7 @@ footer p{font-size:12px;color:var(--t3);font-family:var(--fm)}
 </div>
 
 <!-- MOBILE ONLY: single merged carousel with all photos -->
-<div class="carousel-card carousel-card-mobile" data-carousel style="display:none;margin-top:20px;border-radius:var(--rs);background:var(--card);border:1px solid var(--border);overflow:hidden;position:relative;height:320px">
+<div class="carousel-card-mobile" data-carousel>
 <div style="overflow:hidden;height:100%"><div class="carousel-track">
 <div class="carousel-slide"><img src="files/hobby2.jpg" alt=""></div>
 <div class="carousel-slide"><img src="files/hobby3.jpg" alt=""></div>
